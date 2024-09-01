@@ -1,0 +1,126 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "nycpayrollADF"
+		},
+		"ADLS_LinkedStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_LinkedStorage'"
+		},
+		"AzureSqlAggregate_LS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlAggregate_LS'"
+		},
+		"AzureSqlDB_LinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDB_LinkedService'"
+		},
+		"nycpayroll_source_LinkedService_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'nycpayroll_source_LinkedService'"
+		},
+		"ADLS_LinkedStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://nycpayrollsa.dfs.core.windows.net/"
+		},
+		"AzureSqlAggregate_LS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "nycpayroll.database.windows.net"
+		},
+		"AzureSqlAggregate_LS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "nycpayrollDB"
+		},
+		"AzureSqlAggregate_LS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sql_admin"
+		},
+		"AzureSqlDB_LinkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "nycpayroll.database.windows.net"
+		},
+		"AzureSqlDB_LinkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "nycpayrollDB"
+		},
+		"AzureSqlDB_LinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sql_admin"
+		},
+		"nycpayroll_source_LinkedService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://nycpayrollsa.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "nycpayrollADF_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_LinkedStorage_accountKey": {
+						"value": "[parameters('ADLS_LinkedStorage_accountKey')]"
+					},
+					"AzureSqlAggregate_LS_password": {
+						"value": "[parameters('AzureSqlAggregate_LS_password')]"
+					},
+					"AzureSqlDB_LinkedService_password": {
+						"value": "[parameters('AzureSqlDB_LinkedService_password')]"
+					},
+					"nycpayroll_source_LinkedService_accountKey": {
+						"value": "[parameters('nycpayroll_source_LinkedService_accountKey')]"
+					},
+					"ADLS_LinkedStorage_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_LinkedStorage_properties_typeProperties_url')]"
+					},
+					"AzureSqlAggregate_LS_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlAggregate_LS_properties_typeProperties_server')]"
+					},
+					"AzureSqlAggregate_LS_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlAggregate_LS_properties_typeProperties_database')]"
+					},
+					"AzureSqlAggregate_LS_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlAggregate_LS_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDB_LinkedService_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDB_LinkedService_properties_typeProperties_server')]"
+					},
+					"AzureSqlDB_LinkedService_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDB_LinkedService_properties_typeProperties_database')]"
+					},
+					"AzureSqlDB_LinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDB_LinkedService_properties_typeProperties_userName')]"
+					},
+					"nycpayroll_source_LinkedService_properties_typeProperties_url": {
+						"value": "[parameters('nycpayroll_source_LinkedService_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

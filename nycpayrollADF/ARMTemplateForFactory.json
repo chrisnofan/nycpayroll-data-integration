@@ -706,7 +706,7 @@
 			"properties": {
 				"description": "This triggers the pipeline",
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {

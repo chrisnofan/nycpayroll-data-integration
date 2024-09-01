@@ -1,0 +1,25 @@
+{
+	"name": "nycpayroll_staging_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDB_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "STG",
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

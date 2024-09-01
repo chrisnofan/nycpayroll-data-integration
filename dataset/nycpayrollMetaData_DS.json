@@ -1,0 +1,19 @@
+{
+	"name": "nycpayrollMetaData_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_LinkedStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "nycpayroll-source-files"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -7,6 +7,15 @@ The City of New York is embarking on a project to integrate payroll data across 
 - Financial Resource Allocation Analysis: Analyze how the City's financial resources are allocated and how much of the City's budget is being devoted to overtime.
 - Transparency and Public Accessibility: Make the data available to the interested public to show how the City’s budget is being spent on salary and overtime pay for all municipal employees.
 
-## BRIEF
+## Brief
 You have been hired as a Data Engineer to create high-quality data pipelines that are dynamic, automated, scalable, and monitored for efficient operation. The project team also includes the city’s quality assurance experts who will test the pipelines to find any errors and improve overall data quality.
 The source data resides in a remote folder and needs to be processed in a NYC data warehouse. The source datasets consist of CSV files with Employee master data and monthly payroll data entered by various City Agencies.
+
+## Tools used for this project
+- Azure Storage account
+- Azure SQL Server
+- Azure SQL Database
+- Azure Data Factory
+
+## Data Warehouse Design
+Schema: Star Schema (optimized for querying and reporting) was used to desing the datawarehouse.

@@ -1,0 +1,26 @@
+{
+	"name": "nycpayroll Trigger",
+	"properties": {
+		"description": "This triggers the pipeline",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "nycparoll_pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 12,
+				"startTime": "2024-09-01T01:06:00",
+				"endTime": "2024-09-02T01:06:00",
+				"timeZone": "GMT Standard Time"
+			}
+		}
+	}
+}

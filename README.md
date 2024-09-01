@@ -19,3 +19,5 @@ The source data resides in a remote folder and needs to be processed in a NYC da
 
 ## Data Warehouse Design
 Schema: Star Schema (optimized for querying and reporting) was used to desing the datawarehouse.
+
+![dimensional model](https://github.com/user-attachments/assets/1d9fdbb0-dbf4-4135-bab7-d5fff44cbc2a)

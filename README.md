@@ -107,7 +107,7 @@ RegularGrossPaid + TotalOTPaid + TotalOtherPay for the new columns respectively 
 
 ![Screenshot 2024-09-01 021022](https://github.com/user-attachments/assets/400e4f9f-2ab2-4707-9702-a5daf31ff6da)
 
-### Step 7: Verify pipeline run and check aggreagate tables
+### Step 7: Verify pipeline run and check aggregate tables
 
 ![Screenshot 2024-09-01 025220](https://github.com/user-attachments/assets/4087cc2b-a505-469c-b1b8-ed74dc941514)
 
